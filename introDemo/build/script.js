@@ -8,22 +8,26 @@ var rootElement = document.getElementById('root');
 //     );
 
 var reactElement = React.createElement(
-    'header',
+    'div',
     null,
     React.createElement(
-        'h1',
+        'header',
         null,
-        'Hello JSX'
-    ),
-    React.createElement(
-        'h2',
-        null,
-        'Something something'
-    ),
-    React.createElement(
-        'p',
-        null,
-        'lorem20'
+        React.createElement(
+            'h1',
+            null,
+            'Hello JSX'
+        ),
+        React.createElement(
+            'h2',
+            null,
+            'Something something'
+        ),
+        React.createElement(
+            'p',
+            null,
+            'lorem20'
+        )
     ),
     React.createElement(
         'footer',

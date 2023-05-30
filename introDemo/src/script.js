@@ -7,13 +7,19 @@ let rootElement = document.getElementById('root');
 //     React.createElement('h2', {}, 'The best framework'),
 //     );
 
-let reactElement = <header>
+let reactElement = (
+<div>
+    <header>
     <h1>Hello JSX</h1>
     <h2>Something something</h2>
 
     <p>lorem20</p>
+
+    </header>
+    
     <footer>123</footer>
-</header>;
+</div>
+);
 
 ReactDOM.render(reactElement, rootElement);
 
