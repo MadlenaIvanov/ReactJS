@@ -8,7 +8,6 @@ function App() {
       <header className="App-header">
         <h1>ToDo App</h1>
         <main>
-          <h2>Tasks</h2>
           <ToDoList />
 
 

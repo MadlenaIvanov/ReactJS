@@ -6,10 +6,12 @@ export default function ToDoList() {
         <h2>Tasks</h2>
         
          <ul>
-            <ToDoListItem />
-         <li>Clean your room</li>
-         <li>Go shopping</li>
-         <li>Learn React</li>
+            <ToDoListItem text="Clean" />
+            <ToDoListItem text="Run" />
+            <ToDoListItem text="fdjhf" />
+            <li>Clean your room</li>
+            <li>Go shopping</li>
+            <li>Learn React</li>
        </ul>
        </>
      )
