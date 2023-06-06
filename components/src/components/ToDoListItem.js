@@ -1,6 +1,10 @@
 export default function ToDoListItem(props) {
+
+    if (props.person) {
+        console.log(props.person.name);
+    }
     return (
-        <li>{props.text}</li>
+        <li style={{color: props.color}}>{props.children} - {props.person?.name}</li>
     )
 
 }
