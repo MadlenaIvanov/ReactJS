@@ -11,6 +11,22 @@ export default function ToDoList() {
 
    let [count, setCount] = React.useState(0);
 
+   let [name, setName] = React.useState('');
+
+   const addButtonClickHandler = (е) => {
+    setCount(count + 1);
+    setName('Pesho')
+   };
+
+   const addButtonClickHandlerTwo = function() {
+      setCount(count + 1);
+   };
+
+   // target is the <input>-a, взимаме стойността на инпута
+   const inputChangeHandler = (e) => {
+      setName(e.target.value);
+   }
+
 
 
    let firstTask = 'Clean your room modified';
@@ -20,15 +36,37 @@ export default function ToDoList() {
       age: 52
    };
 
-   
+   const peshoHolder = (
+      <h3>He is the best</h3>
+   )
+
+
      return (
         <>
-        <h2>Tasks</h2>
-        
+
+        {/* only when there's a name show this <h2></h2> */}
+        {name && <h2>Counter - {name}</h2>}
+        {name || <h2>No name</h2>}
+
          <ul>
 
             <ToDoListItem>{count}</ToDoListItem>
+
+            { name === 'Pesho' 
+               ? peshoHolder 
+               : <h3>Nah</h3>
+            }
+
+
+            <input type="text" onBlur={inputChangeHandler} />
+
+            {/* these two are the same, we can pick which to choose */}
             <button onClick={() => setCount(count + 1)}>Add</button>
+            <button onClick={setCount.bind(null, count + 1)}>Add</button>
+
+
+            <button onClick={addButtonClickHandler}>Add</button>
+            <button onClick={addButtonClickHandlerTwo}>Add</button>
 
 
 
