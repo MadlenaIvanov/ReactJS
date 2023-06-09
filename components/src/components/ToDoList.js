@@ -46,6 +46,7 @@ export default function ToDoList() {
 
         {/* only when there's a name show this <h2></h2> */}
         {name && <h2>Counter - {name}</h2>}
+        
         {name || <h2>No name</h2>}
 
          <ul>
