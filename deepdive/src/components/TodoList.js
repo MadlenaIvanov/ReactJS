@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import TodoItem from "./TodoItem";
+import uniqid from 'uniqid';
 
 export default function TodoList() {
     const [todos, setTodos] = useState([
@@ -16,14 +17,20 @@ export default function TodoList() {
 
     const onTodoInputBlur = (e) => {
         let todo = {
-            id: todos.length + 1, 
+            id: uniqid(), 
             text: e.target.value
         };
 
         setTodos(state => [
             ...state,
             todo
-        ])
+        ]);
+
+        e.target.value = '';
+    } 
+
+    const deleteTodoItemClickHandler = (id) => {
+        setTodos(oldTodos => oldTodos.filter(todo => todo.id !== id));
     }
 
     return (
@@ -31,7 +38,7 @@ export default function TodoList() {
             <label htmlFor="todo-name">To DO</label>
             <input id="todo-name" type="text" onBlur={onTodoInputBlur} name="todo" />
             <ul>
-                {todos.map(todo => <TodoItem key={todo.id} text={todo.text} />)}
+                {todos.map(todo => <TodoItem key={todo.id} id={todo.id} text={todo.text} onDelete={deleteTodoItemClickHandler} />)}
             </ul>
         </>
     )
