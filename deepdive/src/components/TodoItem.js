@@ -1,18 +1,24 @@
+import styles from './TodoItem.module.css'
 import React, { useEffect } from "react"
 
 export default function TodoItem({
-    id,
-    text,
-    onDelete
+    todo,
+    onDelete,
+    onClick
 }) {
 
     useEffect(() => {
-        console.log(`${id} - Mounted`);
+        console.log(`${todo.id} - Mounted`);
 
         return () => {
             console.log('Unmount')
         }
-    }, [id])
+    }, [todo.id])
 
-    return <li>{text} <button onClick={() => onDelete(id)}>x</button></li>
+    return (
+        <li onClick={() => onClick(todo.id)} className={todo.isDone ? styles['todo-item-done'] : ''}>
+            {todo.text} 
+            <button onClick={(e) => onDelete(e, todo.id)}>x</button>
+        </li>
+    );
 }
