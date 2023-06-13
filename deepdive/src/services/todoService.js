@@ -4,7 +4,7 @@ export const createTodo = async (todo) => {
     let response = await fetch(`${API_URL}/todos`, {
         method: 'POST',
         headers: {
-            'content-type': 'application-json'
+            'content-type': 'application/json'
         },
         body: JSON.stringify(todo)
     });
