@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 
 
 import CreateGame from "./components/CreateGame";
@@ -23,6 +23,15 @@ function App() {
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
 					<Route path="/games/:gameId" component={GameDetails} />
+					<Route path="/custom">
+						<h2>Custom page</h2>
+						<p>dkfjhdkfhkd</p>
+					</Route>
+					<Route path="/logout" render={(props) => {
+						console.log('logged out');
+
+						return <Redirect to="/" />
+					}}/>
 				</Switch>
 
 			</main>
