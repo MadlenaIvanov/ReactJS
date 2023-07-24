@@ -6,8 +6,6 @@ const Login = () => {
         let formData = new FormData(e.currentTarget);
 
         let email = formData.get('email');
-        let email = formData.get('email');
-        let email = formData.get('email');
     }
 
     return(
