@@ -16,7 +16,7 @@ function App() {
     <Quality />
     <Contact />
     <Background />
-    <Footer />
+    <Fooer />
   </div>
   );
 }
