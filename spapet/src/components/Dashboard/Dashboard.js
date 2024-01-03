@@ -1,4 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
+// import logo from '../../logo.svg'
+import { ReactComponent as Logo} from '../../logo.svg'
+import './Dashboard.css'
 
 import PetList from '../PetList';
 
@@ -18,6 +21,8 @@ const Dashboard = () => {
             </Routes>
         </section>
 
+        {/* <img src={logo} title="asd" alt="asd"/> */}
+        <Logo className="logo" />
         </section>
     )
 }

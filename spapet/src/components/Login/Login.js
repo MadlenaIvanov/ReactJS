@@ -17,7 +17,7 @@ const Login = ({
 
         onLoginNav(email);
 
-        navigate('/');
+        navigate('/dashboard');
     }
 
     return(
