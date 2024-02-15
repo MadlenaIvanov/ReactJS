@@ -77,12 +77,10 @@ function App() {
           <input type="checkBox" name='isAdmin' id='isAdmin' defaultChecked />
         </div>
 
-
-
         <input type="submit" value='Login' />
       </form>
 
-      <HobbyList />
+      <HobbyList title="My favorite hobbies" />
     </div>
   );
 }
