@@ -1,4 +1,5 @@
 import React from "react";
+import './HobbyList.css';
 
 class HobbyList extends React.Component {
     constructor(props){
@@ -38,7 +39,14 @@ class HobbyList extends React.Component {
             <>
             <h2>{this.props.title}</h2>
             <ul>
-                {this.state.hobbies.map(x => <li onClick={this.onHobbieClick} key={x._id}>{x.name}</li>)}
+                {this.state.hobbies.map(x => 
+                <li 
+                    className={x.name === this.state.selectedHobby ? 'selected-hobby' : ''} 
+                    onClick={this.onHobbieClick} 
+                    key={x._id}
+                >
+                    {x.name}
+                </li>)}
             </ul>
             </>
         )
