@@ -9,7 +9,7 @@ const Login = () => {
     const navigate = useNavigate();
     const { login } = useContext(AuthContext)
 
-    throw new Error('Sorry pesho');
+    // throw new Error('Sorry pesho');
 
     const loginSubmitHandler = (e) => {
         e.preventDefault();
